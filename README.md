@@ -14,6 +14,7 @@ Please Follow These Steps
 -- Put the weapons file in your resources folder
 
 ## Drop this code in ``qb-core/shared/items.lua``
+````
 --Blacklist Custom WEAPONS
 	['weapon_radargun'] 				 = {['name'] = 'weapon_radargun', 		      	['label'] = 'Radar Gun', 					['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_radargun.png', 		['unique'] = true, 		['useable'] = false, 	['description'] = 'A handhel speed detection device'},
 	['weapon_flamethrower'] 				 = {['name'] = 'weapon_flamethrower', 		['label'] = 'Flamethrower', 		['weight'] = 1000, 		['type'] = 'weapon', 		['ammotype'] = nil,		['image'] = 'flamethrower.png', 	 ['unique'] = true, 	['useable'] = false, 	['description'] = 'A high-precision, long-range rifle'},
