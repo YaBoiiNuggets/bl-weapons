@@ -10,6 +10,7 @@ https://drive.google.com/drive/folders/1_4LxDoz3IPeOCVafqLNxx7C97ZLd8ANd?usp=sha
 Please Follow These Steps
 
 ## Installation ##
+
 -- Put the weapons file in your resources folder
 -- Drop this code in qb-core/shared/items.lua
 	--Blacklist Custom WEAPONS
