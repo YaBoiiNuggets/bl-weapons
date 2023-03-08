@@ -56,6 +56,7 @@ Please Follow These Steps
     ['weapon_groza'] 				 = {['name'] = 'weapon_groza', 			 		['label'] = 'OTs-14 Groza', 			['weight'] = 15000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_groza.png', 			['unique'] = true, 		['useable'] = false, 	['description'] = 'The OTs-14 Groza is a Russian selective fire bullpup assault rifle chambered for the 7.62×39 round and the 9×39mm subsonic round.'},
     ['weapon_scarh'] 				 = {['name'] = 'weapon_scarh', 	 				['label'] = 'Scar-H', 					['weight'] = 14000, 	['type'] = 'weapon', 	['ammotype'] = 'AMMO_RIFLE',			['image'] = 'weapon_scarh.png',  			['unique'] = true, 		['useable'] = false,	['description'] = 'The FN SCAR-H PR are highly accurate semi-auto or selective fire precision rifles for designated marksmen or sniper teams.'},
     
+```  
 ## Drop The Next code in qb-core/shared/weapons.lua ##
 
 -- Blacklist Custom Weapons
