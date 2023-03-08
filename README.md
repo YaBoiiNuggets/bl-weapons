@@ -14,7 +14,7 @@ Please Follow These Steps
 -- Put the weapons file in your resources folder
 
 ## Drop this code in ``qb-core/shared/items.lua``
-````lua
+```lua
 --Blacklist Custom WEAPONS
 	['weapon_radargun'] 				 = {['name'] = 'weapon_radargun', 		      	['label'] = 'Radar Gun', 					['weight'] = 1000, 		['type'] = 'weapon', 	['ammotype'] = nil,						['image'] = 'weapon_radargun.png', 		['unique'] = true, 		['useable'] = false, 	['description'] = 'A handhel speed detection device'},
 	['weapon_flamethrower'] 				 = {['name'] = 'weapon_flamethrower', 		['label'] = 'Flamethrower', 		['weight'] = 1000, 		['type'] = 'weapon', 		['ammotype'] = nil,		['image'] = 'flamethrower.png', 	 ['unique'] = true, 	['useable'] = false, 	['description'] = 'A high-precision, long-range rifle'},
@@ -58,7 +58,7 @@ Please Follow These Steps
     
 ```
 ## Drop The Next code in qb-core/shared/weapons.lua ##
-
+```lua
 -- Blacklist Custom Weapons
 	[`weapon_radargun`] 				 = {['name'] = 'weapon_radargun', 		['label'] = 'Radar Gun', 				['ammotype'] = nil,	['damagereason'] = 'Really???'},
 	[`weapon_dragunov`] 		 = {['name'] = 'weapon_dragunov', 	 	['label'] = 'Dragunov', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
@@ -106,9 +106,9 @@ Please Follow These Steps
   [`weapon_aks74`] 		 		= {['name'] = 'weapon_aks74', 	 			['label'] = 'AKS-74', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
   [`weapon_groza`] 		 		= {['name'] = 'weapon_groza', 	 			['label'] = 'OTs-14 Groza', 			['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
   [`weapon_scarh`] 		 		= {['name'] = 'weapon_scarh', 	 			['label'] = 'Scar-H', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-
+```
 ## Drop The Next Code in ``qb-weapons/config.lua``
-
+```lua
 -- Blacklist Custom Weapons
     ['weapon_ak47'] 			= 0.15,
     ['weapon_de'] 	                = 0.15,
@@ -162,8 +162,9 @@ Please Follow These Steps
     ['weapon_pi'] 				    = 0.15,
     ['weapon_staff'] 				= 0.15,
     ['weapon_bolt'] 				= 0.15,
-
+```
 ## Drop the next code in ``qb-weapons/config.lua``
+```lua
     ['WEAPON_M9'] = {
         ['defaultclip'] = {
             component = 'COMPONENT_M9_CLIP_01',
@@ -317,9 +318,9 @@ Please Follow These Steps
             item = 'rifle_suppressor',
         },
     },
-
+```
 ## Add the next code in ``qb-smallresources/client/weapondraw.lua``
-
+```lua
     'WEAPON_DRAGUNOV',
     'WEAPON_DRACO',
     'WEAPON_GEPARD',
@@ -366,9 +367,10 @@ Please Follow These Steps
     'WEAPON_SCARH',
     'WEAPON_RADARGUN',
 
+```
 ## Drop the next code in ``qb-smallresources/client/recoil.lua (LINE 107)``
 
-
+```lua
     [GetHashKey("weapon_flamethrower")] = 0.40,
 	[GetHashKey("weapon_dragunov")] = 0.45,
 	[GetHashKey("weapon_m24")] = 0.50,
@@ -402,8 +404,9 @@ Please Follow These Steps
     [GetHashKey("weapon_aks74")] = 0.75,
     [GetHashKey("weapon_groza")] = 0.75,
     [GetHashKey("weapon_scarh")] = 0.65,
-    
+```
 ## Add this next line of code to your weaponsTable in ``ps-dispatch/client/cl_events.lua``
+```lua
     [GetHashKey("WEAPON_FLAMETHROWER")] = "CLASS 3: Flamethrower",
     [GetHashKey("WEAPON_DRAGUNOV")] = "CLASS 3: Dragunov",
     [GetHashKey("WEAPON_G22")] = "CLASS 4: G22 Sniper",
@@ -432,3 +435,4 @@ Please Follow These Steps
     [GetHashKey("WEAPON_AKS74")] = "CLASS 3: AKS-74",
     [GetHashKey("WEAPON_GROZA")] = "CLASS 3: OTs-14 Groza",
     [GetHashKey("WEAPON_SCARH")] = "CLASS 3: Scar-H",
+```
