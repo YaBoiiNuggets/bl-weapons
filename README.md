@@ -5,9 +5,6 @@
 I am sorry i cannot put the download inside of my github, the file is to big. I will post a link below this to my google drive download, there you will have the files!
 https://drive.google.com/drive/folders/1_4LxDoz3IPeOCVafqLNxx7C97ZLd8ANd?usp=share_link
 
-## Setup ##
-
-Please Follow These Steps
 
 ## Installation ##
 
