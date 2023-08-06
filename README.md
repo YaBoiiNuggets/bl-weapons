@@ -1,10 +1,5 @@
 # bl-weapons
 
-## Description ##
-
-I am sorry i cannot put the download inside of my github, the file is to big. I will post a link below this to my google drive download, there you will have the files!
-https://drive.google.com/drive/folders/1QPBXD-Z1cSWA01VRVtgMwzUmvOnG4uwB?usp=sharing
-
 
 ## Installation ##
 
