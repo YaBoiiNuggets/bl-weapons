@@ -1,5 +1,5 @@
 # bl-weapons
-
+If you still have issues please put them in the Issues tab, im still working on this, but they work for me and everyway I use them
 
 ## Installation ##
 
