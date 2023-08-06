@@ -51,7 +51,6 @@
 ## Drop The Next code in qb-core/shared/weapons.lua ##
 ```lua
 -- Blacklist Custom Weapons
-	[`weapon_radargun`] 				 = {['name'] = 'weapon_radargun', 		['label'] = 'Radar Gun', 				['ammotype'] = nil,	['damagereason'] = 'Really???'},
 	[`weapon_dragunov`] 		 = {['name'] = 'weapon_dragunov', 	 	['label'] = 'Dragunov', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_draco`] 		 = {['name'] = 'weapon_draco', 	 	['label'] = 'Draco', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_gepard`] 		 = {['name'] = 'weapon_gepard', 	 	['label'] = 'Gepard', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
@@ -356,7 +355,6 @@
     'WEAPON_AKS74',
     'WEAPON_GROZA',
     'WEAPON_SCARH',
-    'WEAPON_RADARGUN',
 
 ```
 ## Drop the next code in ``qb-smallresources/client/recoil.lua (LINE 107)``
