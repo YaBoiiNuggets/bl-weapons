@@ -6,14 +6,37 @@
 -- Put the weapons file in your resources folder
 ## Drop this code in ``qb-weapons/server/main.lua line 303``
 ````
+QBCore.Functions.CreateUseableItem('flame_ammo', function(source, item)
+    TriggerClientEvent('weapons:client:AddAmmo', source, 'AMMO_FLAME', 500, item)
+end)
+
+QBCore.Functions.CreateUseableItem('nail_ammo', function(source, item)
+    TriggerClientEvent('weapons:client:AddAmmo', source, 'AMMO_NAIL', 20, item)
+end)
+
 QBCore.Functions.CreateUseableItem('taser_ammo', function(source, item)
     TriggerClientEvent('weapons:client:AddAmmo', source, 'AMMO_TASER', 1, item)
 end)
+
+QBCore.Functions.CreateUseableItem('paintball_ammo', function(source, item)
+    TriggerClientEvent('weapons:client:AddAmmo', source, 'AMMO_PAINTBALL', 20, item)
+end)
+
+QBCore.Functions.CreateUseableItem('ltl_ammo', function(source, item)
+    TriggerClientEvent('weapons:client:AddAmmo', source, 'AMMO_LTL', 10, item)
+end)
+
 ````
 ## Drop this code in ``qb-core/shared/items.lua``
 ```lua
 --Blacklist Custom WEAPONS
-['weapon_taser']                   = {['name'] = 'weapon_taser',                     ['label'] = 'Taser',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_TASER',              ['image'] = 'weapon_stungun.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
+['weapon_flamethrower']                   = {['name'] = 'weapon_flamethrower',                     ['label'] = 'Flamethrower',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_FLAME',              ['image'] = 'weapon_flamethrower.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
+    ['flame_ammo']                   = {['name'] = 'flame_ammo',                     ['label'] = 'Flamethrower Fuel',               ['weight'] = 1000,         ['type'] = 'item',     ['ammotype'] = nil,              ['image'] = 'flame_ammo.png',             ['unique'] = false,         ['useable'] = false,    ['combinable'] = nil,     ['description'] = 'A small firearm designed to be held in one hand'},
+    ['nail_ammo']                   = {['name'] = 'nail_ammo',                     ['label'] = 'Nails',               ['weight'] = 1000,         ['type'] = 'item',     ['ammotype'] = nil,              ['image'] = 'nail_ammo.png',             ['unique'] = false,         ['useable'] = false,    ['combinable'] = nil,     ['description'] = 'A small firearm designed to be held in one hand'},
+    ['ltl_ammo']                   = {['name'] = 'ltl_ammo',                     ['label'] = 'Slug Ammo',               ['weight'] = 1000,         ['type'] = 'item',     ['ammotype'] = nil,              ['image'] = 'slug_ammo.png',             ['unique'] = false,         ['useable'] = false,    ['combinable'] = nil,     ['description'] = 'A small firearm designed to be held in one hand'},
+    ['paintball_ammo']                   = {['name'] = 'paintball_ammo',                     ['label'] = 'Paintball Pod',               ['weight'] = 1000,         ['type'] = 'item',     ['ammotype'] = nil,              ['image'] = 'paintball_ammo.png',             ['unique'] = false,         ['useable'] = false,  ['combinable'] = nil,   ['description'] = 'A small firearm designed to be held in one hand'},
+    ['taser_ammo']                   = {['name'] = 'taser_ammo',                     ['label'] = 'Taser Ammo',               ['weight'] = 1000,         ['type'] = 'item',     ['ammotype'] = nil,              ['image'] = 'taser_ammo.png',             ['unique'] = false,         ['useable'] = false,   ['combinable'] = nil,  ['description'] = 'A small firearm designed to be held in one hand'},
+    ['weapon_taser']                   = {['name'] = 'weapon_taser',                     ['label'] = 'Taser',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_TASER',              ['image'] = 'weapon_stungun.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
     ['weapon_dp9']                   = {['name'] = 'weapon_dp9',                     ['label'] = 'Diamondback 9',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_PISTOL',              ['image'] = 'weapon_dp9.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
     ['weapon_ltl']                   = {['name'] = 'weapon_ltl',                     ['label'] = 'Bean Bag Shotgun',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_SHOTGUN',              ['image'] = 'weapon_ltl.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
     ['weapon_staff']                   = {['name'] = 'weapon_staff',                     ['label'] = 'Staff',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = nil,              ['image'] = 'staff.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
@@ -41,7 +64,7 @@ end)
     ['weapon_m24']                   = {['name'] = 'weapon_m24',                     ['label'] = 'M-24',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_RIFLE',              ['image'] = 'weapon_m24.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
     ['weapon_nailgun']                   = {['name'] = 'weapon_nailgun',                     ['label'] = 'Nail Gun',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_RIFLE',              ['image'] = 'weapon_nailgun.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
     ['weapon_m4']                   = {['name'] = 'weapon_m4',                     ['label'] = 'M-4',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_RIFLE',              ['image'] = 'weapon_m4.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
-    ['weapon_glock']                   = {['name'] = 'weapon_glock',                     ['label'] = 'Glock',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_RIFLE',              ['image'] = 'weapon_glock.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
+    ['weapon_glock']                   = {['name'] = 'weapon_glock',                     ['label'] = 'Glock',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_PISTOL',              ['image'] = 'weapon_glock.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
     ['weapon_uzi']                   = {['name'] = 'weapon_uzi',                     ['label'] = 'Uzi',               ['weight'] = 1000,         ['type'] = 'weapon',     ['ammotype'] = 'AMMO_SMG',              ['image'] = 'weapon_uzi.png',             ['unique'] = true,         ['useable'] = false,     ['description'] = 'A small firearm designed to be held in one hand'},
 
   
@@ -49,17 +72,19 @@ end)
 ## Drop The Next code in qb-core/shared/weapons.lua ##
 ```lua
 -- Blacklist Custom Weapons
+	[`weapon_nailgun`] 		 			= {['name'] = 'weapon_nailgun', 	 				['label'] = 'Nail Gun', 			['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_NAIL',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_flamethrower`] 		 			= {['name'] = 'weapon_flamethrower', 	 				['label'] = 'Flamethrower', 			['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_FLAME',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m4`] 		 			= {['name'] = 'weapon_m4', 	 				['label'] = 'M4A1 Carbine', 			['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_dragunov`] 		 = {['name'] = 'weapon_dragunov', 	 	['label'] = 'Dragunov', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_draco`] 		 = {['name'] = 'weapon_draco', 	 	['label'] = 'Draco', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 	[`weapon_gepard`] 		 = {['name'] = 'weapon_gepard', 	 	['label'] = 'Gepard', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_groza`] 		 = {['name'] = 'weapon_groza', 	 	['label'] = 'Groza', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_scar`] 		 = {['name'] = 'weapon_scar', 	 	['label'] = 'Scar', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
-	[`weapon_mpx`] 		 = {['name'] = 'weapon_mpx', 	 	['label'] = 'MPX', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
-	[`weapon_m24`] 		 = {['name'] = 'weapon_m24', 	 	['label'] = 'M24', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
-	[`weapon_m14`] 		 = {['name'] = 'weapon_m14', 	 	['label'] = 'M14', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
-	[`weapon_g22`] 		 = {['name'] = 'weapon_g22', 	 	['label'] = 'G22 Sniper', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
+	[`weapon_m24`] 		 = {['name'] = 'weapon_m24', 	 	['label'] = 'M24', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
+	[`weapon_m14`] 		 = {['name'] = 'weapon_m14', 	 	['label'] = 'M14', 				['ammotype'] = 'AMMO_RIFLE',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
+	[`weapon_taser`] 		 = {['name'] = 'weapon_taser', 	 	['label'] = 'Taser', 				['ammotype'] = 'AMMO_TASER',	['damagereason'] = 'Taserd in the ass'},
 	[`weapon_skorpion`] 		 = {['name'] = 'weapon_skorpion', 	 	['label'] = 'Skorpion', 				['ammotype'] = 'AMMO_SNIPER',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
-	[`weapon_ltl`] 		 = {['name'] = 'weapon_ltl', 	 	['label'] = 'PD Bean Bag Shotgun', 				['ammotype'] = 'AMMO_SHOTGUN',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
+	[`weapon_ltl`] 		 = {['name'] = 'weapon_ltl', 	 	['label'] = 'PD Bean Bag Shotgun', 				['ammotype'] = 'AMMO_LTL',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_mp5`] 		 = {['name'] = 'weapon_mp5', 	 	['label'] = 'Dragunov', 				['ammotype'] = 'AMMO_SMG',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_g18`] 		 = {['name'] = 'weapon_g18', 	 	['label'] = 'Glock 18', 				['ammotype'] = 'AMMO_PISTOL',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_g18c`] 		 = {['name'] = 'weapon_g18c', 	 	['label'] = 'Glock 18C', 				['ammotype'] = 'AMMO_PISTOL',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
@@ -70,30 +95,29 @@ end)
 	[`weapon_staff`] 		 = {['name'] = 'weapon_dragunov', 	 	['label'] = 'Staff', 				['ammotype'] = 'AMMO_PISTOL',	['damagereason'] = 'Ended / Sniped / Shot down / Floored'},
 	[`weapon_gavel`] 				 = {['name'] = 'weapon_gavel', 		['label'] = 'Gavel', 		['weapontype'] = 'Melee',	['ammotype'] = nil,	['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
 	[`weapon_flamethrower`] 				 = {['name'] = 'weapon_flamethrower', 		['label'] = 'Flamethrower', 		['ammotype'] = nil,	['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
-  [`weapon_katana`] 			 	= {['name'] = 'weapon_katana', 				['label'] = 'Katana', 					['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
-  [`weapon_shiv`] 			 	= {['name'] = 'weapon_shiv', 				['label'] = 'Shiv', 					['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
-  [`weapon_sledgehammer`] 		= {['name'] = 'weapon_sledgehammer', 		['label'] = 'Sledge Hammer', 			['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Melee killed / Whacked / Executed / Beat down / Murdered / Battered'},
-  [`weapon_karambit`] 			= {['name'] = 'weapon_karambit', 			['label'] = 'Karambit', 				['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
-  [`weapon_keyboard`] 			= {['name'] = 'weapon_keyboard', 			['label'] = 'Keyboard', 				['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Melee killed / Whacked / Executed / Beat down / Murdered / Battered'},
-  [`weapon_glock17`] 		 		= {['name'] = 'weapon_glock17', 			['label'] = 'Glock-17',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
-  [`weapon_glock18c`] 		 	= {['name'] = 'weapon_glock18c', 			['label'] = 'Glock-18 Custom',		    ['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
-  [`weapon_glock22`] 		 		= {['name'] = 'weapon_glock22', 			['label'] = 'Glock-22',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
-  [`weapon_deagle`] 		 		= {['name'] = 'weapon_deagle', 				['label'] = 'Desert Eagle',		    	['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
-  [`weapon_fnx45`] 		 		= {['name'] = 'weapon_fnx45', 				['label'] = 'FN FNX-45',		    	['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
-  [`weapon_m1911`] 		 		= {['name'] = 'weapon_m1911', 				['label'] = 'M1911',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
-  [`weapon_glock20`] 		 		= {['name'] = 'weapon_glock20', 			['label'] = 'Glock-20',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
-  [`weapon_glock19gen4`] 		 	= {['name'] = 'weapon_glock19gen4', 		['label'] = 'Glock-19 Gen 4',		    ['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
-  [`weapon_pmxfm`] 			 	= {['name'] = 'weapon_pmxfm', 				['label'] = 'Beretta PMX', 				['weapontype'] = 'Submachine Gun',	['ammotype'] = 'AMMO_SMG',				['damagereason'] = 'Riddled / Drilled / Finished / Submachine Gunned'},
-  [`weapon_mac10`] 			 	= {['name'] = 'weapon_mac10', 				['label'] = 'MAC-10', 					['weapontype'] = 'Submachine Gun',	['ammotype'] = 'AMMO_SMG',				['damagereason'] = 'Riddled / Drilled / Finished / Submachine Gunned'},
-  [`weapon_mk47fm`] 		 		= {['name'] = 'weapon_mk47fm', 	 			['label'] = 'MK47 Mutant', 				['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-  [`weapon_m6ic`] 		 		= {['name'] = 'weapon_m6ic', 	 			['label'] = 'LWRC M6IC', 				['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-  [`weapon_scarsc`] 		 		= {['name'] = 'weapon_scarsc', 	 			['label'] = 'Scar SC', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-  [`weapon_m4`] 		 			= {['name'] = 'weapon_m4', 	 				['label'] = 'M4A1 Carbine', 			['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-  [`weapon_ak47`] 		 		= {['name'] = 'weapon_ak47', 	 			['label'] = 'AK-47', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-  [`weapon_ak74`] 		 		= {['name'] = 'weapon_ak74', 	 			['label'] = 'AK-74', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-  [`weapon_aks74`] 		 		= {['name'] = 'weapon_aks74', 	 			['label'] = 'AKS-74', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-  [`weapon_groza`] 		 		= {['name'] = 'weapon_groza', 	 			['label'] = 'OTs-14 Groza', 			['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
-  [`weapon_scarh`] 		 		= {['name'] = 'weapon_scarh', 	 			['label'] = 'Scar-H', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_katana`] 			 	= {['name'] = 'weapon_katana', 				['label'] = 'Katana', 					['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_shiv`] 			 	= {['name'] = 'weapon_shiv', 				['label'] = 'Shiv', 					['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_sledgehammer`] 		= {['name'] = 'weapon_sledgehammer', 		['label'] = 'Sledge Hammer', 			['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Melee killed / Whacked / Executed / Beat down / Murdered / Battered'},
+	[`weapon_karambit`] 			= {['name'] = 'weapon_karambit', 			['label'] = 'Karambit', 				['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Knifed / Stabbed / Eviscerated'},
+	[`weapon_keyboard`] 			= {['name'] = 'weapon_keyboard', 			['label'] = 'Keyboard', 				['weapontype'] = 'Melee',			['ammotype'] = nil,						['damagereason'] = 'Melee killed / Whacked / Executed / Beat down / Murdered / Battered'},
+	[`weapon_glock17`] 		 		= {['name'] = 'weapon_glock17', 			['label'] = 'Glock-17',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_glock`] 		 	= {['name'] = 'weapon_glock', 					['label'] = 'Glock',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_glock22`] 		 		= {['name'] = 'weapon_glock22', 			['label'] = 'Glock-22',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_deagle`] 		 		= {['name'] = 'weapon_deagle', 				['label'] = 'Desert Eagle',		    	['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_fnx45`] 		 		= {['name'] = 'weapon_fnx45', 				['label'] = 'FN FNX-45',		    	['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_m1911`] 		 		= {['name'] = 'weapon_m1911', 				['label'] = 'M1911',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_glock20`] 		 		= {['name'] = 'weapon_glock20', 			['label'] = 'Glock-20',		    		['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_glock19gen4`] 		 	= {['name'] = 'weapon_glock19gen4', 		['label'] = 'Glock-19 Gen 4',		    ['weapontype'] = 'Pistol',			['ammotype'] = 'AMMO_PISTOL',			['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+	[`weapon_pmxfm`] 			 	= {['name'] = 'weapon_pmxfm', 				['label'] = 'Beretta PMX', 				['weapontype'] = 'Submachine Gun',	['ammotype'] = 'AMMO_SMG',				['damagereason'] = 'Riddled / Drilled / Finished / Submachine Gunned'},
+	[`weapon_mac10`] 			 	= {['name'] = 'weapon_mac10', 				['label'] = 'MAC-10', 					['weapontype'] = 'Submachine Gun',	['ammotype'] = 'AMMO_SMG',				['damagereason'] = 'Riddled / Drilled / Finished / Submachine Gunned'},
+	[`weapon_mk47fm`] 		 		= {['name'] = 'weapon_mk47fm', 	 			['label'] = 'MK47 Mutant', 				['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_m6ic`] 		 		= {['name'] = 'weapon_m6ic', 	 			['label'] = 'LWRC M6IC', 				['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_scarsc`] 		 		= {['name'] = 'weapon_scarsc', 	 			['label'] = 'Scar SC', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_ak47`] 		 		= {['name'] = 'weapon_ak47', 	 			['label'] = 'AK-47', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_ak74`] 		 		= {['name'] = 'weapon_ak74', 	 			['label'] = 'AK-74', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_aks74`] 		 		= {['name'] = 'weapon_aks74', 	 			['label'] = 'AKS-74', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_groza`] 		 		= {['name'] = 'weapon_groza', 	 			['label'] = 'OTs-14 Groza', 			['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
+	[`weapon_scarh`] 		 		= {['name'] = 'weapon_scarh', 	 			['label'] = 'Scar-H', 					['weapontype'] = 'Assault Rifle',	['ammotype'] = 'AMMO_RIFLE',			['damagereason'] = 'Ended / Rifled / Shot down / Floored'},
 ```
 ## Drop The Next Code in ``qb-weapons/config.lua``
 ```lua
