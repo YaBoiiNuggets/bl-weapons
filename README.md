@@ -4,7 +4,12 @@
 ## Installation ##
 
 -- Put the weapons file in your resources folder
-
+## Drop this code in ``qb-weapons/server/main.lua line 303``
+````
+QBCore.Functions.CreateUseableItem('taser_ammo', function(source, item)
+    TriggerClientEvent('weapons:client:AddAmmo', source, 'AMMO_TASER', 1, item)
+end)
+````
 ## Drop this code in ``qb-core/shared/items.lua``
 ```lua
 --Blacklist Custom WEAPONS
